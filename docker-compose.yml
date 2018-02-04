@@ -1,0 +1,17 @@
+version: "3"
+services:
+  unifi:
+    image: hedlund/unifi-video
+    container_name: unifi-video
+    cap_add:
+      - SYS_ADMIN
+      - DAC_READ_SEARCH
+    ports:
+      - "6666:6666"
+      - "7080:7080"
+      - "7442-7443:7442-7443"
+      - "7445-7447:7445-7447"
+    # volumes:
+    #   - "<mongodb dir>:/var/lib/mongodb"
+    #   - "<data dir>:/var/lib/unifi-video"
+    #   - "<logs dir>:/var/log/unifi-video"
